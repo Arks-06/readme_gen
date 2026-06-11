@@ -26,7 +26,7 @@ class State(rx.State):
         try:
             # Call the backend we built
             response = requests.post(
-                "http://localhost:8080/api/generate",
+                "https://readme-agent-g5or.onrender.com/api/generate",
                 json={"url": self.url}
             )
 
