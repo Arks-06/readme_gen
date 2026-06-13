@@ -48,9 +48,18 @@ class State(rx.State):
 def index() -> rx.Component:
     return rx.center(
         rx.vstack(
+            
             # Header
-            rx.heading("README Generator", size="8"),
-            rx.text("Paste a GitHub repository URL to generate a comprehensive README.md using AI.", color="gray"),
+            rx.heading("README Generator", 
+                       size="9",
+                    #    background_image="linear-gradient(to right, #F2EB83, #83DCF2, #A183F2, #F283A4)", # Tailwind equivalent of from-indigo-600 to-purple-600
+                    # background_clip="text",
+                        # color="transparent",
+                       ),
+            rx.text("Paste a GitHub repository URL to generate a comprehensive README.md using AI.", 
+                    color="gray",
+                    # high_contrast=True
+                    ),
             
             # Input and Button
             rx.hstack(
@@ -61,6 +70,7 @@ def index() -> rx.Component:
                 ),
                 rx.button(
                     "Generate",
+                    background_image="linear-gradient(to right, #DE2810)",
                     on_click=State.generate_readme,
                     loading=State.is_loading,
                     width="120px"
@@ -101,7 +111,7 @@ def index() -> rx.Component:
                         border="1px solid #eaeaea",
                         border_radius="8px",
                         width="100%",
-                        background_color="#011601",
+                        background_color="#02011C",
                         color="white"
                     ),
                     width="100%",
@@ -110,11 +120,13 @@ def index() -> rx.Component:
             ),
             
             align="center",
-            spacing="4",
-            padding="8",
+            spacing="6",
+            padding="10",
             width="100%",
             max_width="800px"
         ),
+
+        background_image="linear-gradient(to bottom, #010005, #010005, #043D07, #CEF28F)",
         width="100%",
         min_height="100vh"
     )
